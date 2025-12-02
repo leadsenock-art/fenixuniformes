@@ -24,8 +24,8 @@ const About: React.FC = () => {
             
             <div className="relative z-10 overflow-hidden rounded-[2rem] md:rounded-[2.5rem] shadow-2xl shadow-black border border-white/5">
               <img
-                src="https://picsum.photos/seed/police1/800/1000"
-                alt="Fardamento Policial"
+                src="https://images.unsplash.com/photo-1595590424283-b8f17842773f?q=80&w=800&auto=format&fit=crop"
+                alt="Equipamento Tático Fenix"
                 className="w-full h-auto object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000 ease-out grayscale group-hover:grayscale-0"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-tactical-dark/90 via-transparent to-transparent"></div>

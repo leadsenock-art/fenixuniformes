@@ -14,25 +14,25 @@ const products: Product[] = [
     id: 1,
     title: 'Fardamento Militar',
     category: 'Alta Resistência',
-    image: 'https://picsum.photos/seed/camo1/600/800',
+    image: 'https://images.unsplash.com/photo-1544719576-904e2d01e057?q=80&w=600&auto=format&fit=crop',
   },
   {
     id: 2,
     title: 'Acessórios Táticos',
     category: 'Equipamentos',
-    image: 'https://picsum.photos/seed/tacticalvest/600/800',
+    image: 'https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?q=80&w=600&auto=format&fit=crop',
   },
   {
     id: 3,
     title: 'Uniformes Profissionais',
     category: 'Corporativo',
-    image: 'https://picsum.photos/seed/uniform2/600/800',
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=600&auto=format&fit=crop',
   },
   {
     id: 4,
     title: 'Camisas Operacionais',
     category: 'Conforto & Ação',
-    image: 'https://picsum.photos/seed/tshirtop/600/800',
+    image: 'https://images.unsplash.com/photo-1512413314644-84564c728362?q=80&w=600&auto=format&fit=crop',
   },
 ];
 
