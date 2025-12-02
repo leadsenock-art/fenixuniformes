@@ -26,14 +26,14 @@ const Navbar: React.FC = () => {
     <>
       <nav
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-out ${
-          isScrolled ? 'py-4' : 'py-6'
+          isScrolled ? 'py-3 md:py-4' : 'py-4 md:py-6'
         }`}
       >
         <div className={`container mx-auto px-4 md:px-6 transition-all duration-500 ${
             isScrolled ? 'max-w-6xl' : ''
         }`}>
           <div className={`
-            flex justify-between items-center px-6 py-3 
+            flex justify-between items-center px-4 md:px-6 py-2 md:py-3 
             ${isScrolled 
               ? 'bg-tactical-dark/60 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl shadow-black/50' 
               : 'bg-transparent'
@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
               <img 
                 src="https://i.imgur.com/oqaGxkZ.png" 
                 alt="Fenix Uniforme Logo" 
-                className="h-12 md:h-16 w-auto object-contain drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_0_15px_rgba(234,179,8,0.4)] transition-all duration-500"
+                className="h-10 md:h-16 w-auto object-contain drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_0_15px_rgba(234,179,8,0.4)] transition-all duration-500"
               />
             </a>
 
@@ -72,10 +72,11 @@ const Navbar: React.FC = () => {
 
             {/* Mobile Toggle */}
             <button
-              className="md:hidden text-white p-2 rounded-full hover:bg-white/10 transition-colors z-50"
+              className="md:hidden text-white p-2 rounded-full hover:bg-white/10 transition-colors z-50 focus:outline-none"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Alternar menu"
             >
-              {isMobileMenuOpen ? <X /> : <Menu />}
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
@@ -88,15 +89,15 @@ const Navbar: React.FC = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-tactical-dark/95 backdrop-blur-xl pt-32 px-6 md:hidden"
+            className="fixed inset-0 z-40 bg-tactical-dark/95 backdrop-blur-xl pt-28 px-6 md:hidden overflow-y-auto"
           >
-            <div className="flex flex-col items-center space-y-6">
+            <div className="flex flex-col items-center space-y-6 min-h-[calc(100vh-120px)] justify-start">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-2xl font-display font-bold text-slate-200 hover:text-tactical-accent transition-colors uppercase tracking-widest"
+                  className="text-2xl font-display font-bold text-slate-200 hover:text-tactical-accent transition-colors uppercase tracking-widest py-2"
                 >
                   {link.name}
                 </a>
@@ -105,7 +106,8 @@ const Navbar: React.FC = () => {
                 href="https://wa.me/5571996534605"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 px-8 py-4 bg-tactical-accent text-black font-bold rounded-full uppercase tracking-widest shadow-[0_0_20px_rgba(234,179,8,0.4)]"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="mt-8 w-full max-w-xs text-center px-8 py-4 bg-tactical-accent text-black font-bold rounded-full uppercase tracking-widest shadow-[0_0_20px_rgba(234,179,8,0.4)] active:scale-95 transition-transform"
               >
                 WhatsApp Oficial
               </a>
