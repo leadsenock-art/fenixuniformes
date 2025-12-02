@@ -14,25 +14,25 @@ const products: Product[] = [
     id: 1,
     title: 'Fardamento Militar',
     category: 'Alta Resistência',
-    image: 'https://images.unsplash.com/photo-1544719576-904e2d01e057?q=80&w=600&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1626262846208-a53518175498?q=80&w=600&auto=format&fit=crop', // Camo/Tactical uniform
   },
   {
     id: 2,
     title: 'Acessórios Táticos',
     category: 'Equipamentos',
-    image: 'https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?q=80&w=600&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1611003228941-98852ba62227?q=80&w=600&auto=format&fit=crop', // Tactical Vest/Gear
   },
   {
     id: 3,
     title: 'Uniformes Profissionais',
-    category: 'Corporativo',
-    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=600&auto=format&fit=crop',
+    category: 'Polícia & Segurança',
+    image: 'https://images.unsplash.com/photo-1606014316041-35b800531631?q=80&w=600&auto=format&fit=crop', // SWAT/Police/Tactical Officer
   },
   {
     id: 4,
     title: 'Camisas Operacionais',
     category: 'Conforto & Ação',
-    image: 'https://images.unsplash.com/photo-1512413314644-84564c728362?q=80&w=600&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1595590424283-b8f17842773f?q=80&w=600&auto=format&fit=crop', // Tactical shirt detail
   },
 ];
 

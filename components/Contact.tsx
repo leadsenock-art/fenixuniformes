@@ -76,7 +76,7 @@ const Contact: React.FC = () => {
 
             <div className="h-[300px] md:h-full md:min-h-[400px] relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl group">
                <img 
-                src="https://images.unsplash.com/photo-1563823439050-70525287317d?q=80&w=800&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?q=80&w=800&auto=format&fit=crop" 
                 alt="Mapa Localização Estilizado" 
                 className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-700"
                />

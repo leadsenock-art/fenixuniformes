@@ -32,8 +32,8 @@ const Hero: React.FC = () => {
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 10, ease: "easeOut" }}
-          src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?q=80&w=1920&auto=format&fit=crop"
-          alt="Tactical Background Texture"
+          src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?q=80&w=1920&auto=format&fit=crop"
+          alt="Tactical Operator Background"
           className="w-full h-full object-cover object-center"
         />
 
