@@ -36,6 +36,11 @@ const Hero: React.FC = () => {
           alt="Tactical Background"
           className="w-full h-full object-cover object-center"
         />
+
+        {/* Logo Watermark */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none opacity-[0.03] mix-blend-overlay">
+           <img src="https://i.imgur.com/oqaGxkZ.png" alt="Watermark" className="w-[800px] h-auto grayscale" />
+        </div>
       </div>
 
       {/* Content */}

@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
-             <img src="https://imgur.com/oqaGxkZ" alt="Fenix Logo" className="h-8 w-auto mb-4 opacity-50 grayscale hover:grayscale-0 transition-all duration-500 mx-auto md:mx-0" />
+             <img src="https://i.imgur.com/oqaGxkZ.png" alt="Fenix Logo" className="h-12 w-auto mb-6 opacity-80 hover:opacity-100 transition-all duration-500 mx-auto md:mx-0" />
              <div className="text-slate-600 text-xs">
               <span className="text-slate-400 font-bold uppercase tracking-wider">Fenix Uniforme</span> © {new Date().getFullYear()}. Todos os direitos reservados.
             </div>

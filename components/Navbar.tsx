@@ -40,11 +40,11 @@ const Navbar: React.FC = () => {
             } transition-all duration-500
           `}>
             {/* Logo */}
-            <a href="#" className="flex items-center space-x-2 group">
+            <a href="#" className="flex items-center space-x-2 group relative z-50">
               <img 
-                src="https://imgur.com/oqaGxkZ" 
+                src="https://i.imgur.com/oqaGxkZ.png" 
                 alt="Fenix Uniforme Logo" 
-                className="h-10 md:h-12 w-auto object-contain drop-shadow-lg"
+                className="h-12 md:h-16 w-auto object-contain drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_0_15px_rgba(234,179,8,0.4)] transition-all duration-500"
               />
             </a>
 
@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
 
             {/* Mobile Toggle */}
             <button
-              className="md:hidden text-white p-2 rounded-full hover:bg-white/10 transition-colors"
+              className="md:hidden text-white p-2 rounded-full hover:bg-white/10 transition-colors z-50"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X /> : <Menu />}
