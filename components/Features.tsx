@@ -5,43 +5,43 @@ import { Award, Shield, Zap, Layers } from 'lucide-react';
 const features = [
   {
     icon: <Award className="w-8 h-8" />,
-    title: "Qualidade Profissional",
+    title: "Qualidade Premium",
     description: "Tecidos de alta tecnologia que suportam a abrasão e o desgaste do dia a dia operacional."
   },
   {
     icon: <Shield className="w-8 h-8" />,
-    title: "Durabilidade Extrema",
-    description: "Costuras reforçadas e acabamento premium para garantir longevidade ao uniforme."
+    title: "Durabilidade",
+    description: "Costuras reforçadas e acabamento de elite para garantir longevidade ao uniforme."
   },
   {
     icon: <Layers className="w-8 h-8" />,
-    title: "Conforto Operacional",
+    title: "Conforto Tático",
     description: "Modelagem anatômica que permite total liberdade de movimento em situações críticas."
   },
   {
     icon: <Zap className="w-8 h-8" />,
-    title: "Pronto Para Uso",
-    description: "Design tático inteligente, com bolsos estratégicos e secagem rápida."
+    title: "Pronto Para Ação",
+    description: "Design inteligente com bolsos estratégicos e tecnologia de secagem rápida."
   }
 ];
 
 const Features: React.FC = () => {
   return (
-    <section id="features" className="py-24 bg-tactical-card border-y border-white/5">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16 max-w-2xl mx-auto">
-          <span className="text-tactical-accent font-bold uppercase tracking-widest text-xs block mb-4">
-            Por que escolher a Fenix?
+    <section id="features" className="py-32 bg-tactical-dark relative">
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-20 max-w-3xl mx-auto">
+          <span className="text-tactical-accent font-bold uppercase tracking-[0.2em] text-xs block mb-4">
+            Diferenciais Fenix
           </span>
-          <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-6">
-            PADRÃO DE QUALIDADE SUPERIOR
+          <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-6">
+            PADRÃO DE <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-500">QUALIDADE SUPERIOR</span>
           </h2>
-          <p className="text-slate-400">
-            Cada peça é desenvolvida pensando na realidade dos profissionais de segurança pública da Bahia e do Brasil.
+          <p className="text-slate-400 text-lg">
+            Cada detalhe é projetado para superar as expectativas dos profissionais mais exigentes.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -49,14 +49,14 @@ const Features: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="bg-tactical-dark p-8 rounded-sm border border-white/5 hover:border-tactical-accent/30 hover:bg-white/5 transition-all duration-300 group"
+              className="bg-white/[0.03] backdrop-blur-sm p-8 rounded-[2rem] border border-white/5 hover:border-tactical-accent/30 hover:bg-white/[0.06] transition-all duration-500 group hover:-translate-y-2"
             >
-              <div className="w-16 h-16 bg-black rounded-sm flex items-center justify-center mb-6 group-hover:bg-tactical-accent transition-colors duration-300">
-                <div className="text-tactical-accent group-hover:text-black transition-colors duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gray-900 to-black border border-white/10 flex items-center justify-center mb-8 shadow-inner group-hover:shadow-[0_0_20px_rgba(234,179,8,0.2)] transition-shadow duration-500">
+                <div className="text-white group-hover:text-tactical-accent transition-colors duration-300 drop-shadow-lg">
                   {feature.icon}
                 </div>
               </div>
-              <h3 className="font-bold text-xl text-white mb-3 uppercase font-display">
+              <h3 className="font-bold text-xl text-white mb-4 uppercase font-display tracking-wide">
                 {feature.title}
               </h3>
               <p className="text-slate-400 text-sm leading-relaxed">

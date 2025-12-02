@@ -38,24 +38,26 @@ const products: Product[] = [
 
 const Products: React.FC = () => {
   return (
-    <section id="products" className="py-24 bg-black">
+    <section id="products" className="py-32 bg-[#050505]">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-          <div className="mb-6 md:mb-0">
-            <span className="text-tactical-accent font-bold uppercase tracking-widest text-xs block mb-2">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+          <div>
+            <span className="text-tactical-accent font-bold uppercase tracking-[0.2em] text-xs block mb-4 px-3 py-1 bg-tactical-accent/10 border border-tactical-accent/20 rounded-full w-fit">
               Arsenal Completo
             </span>
-            <h2 className="font-display font-bold text-4xl text-white">
-              NOSSOS PRODUTOS
+            <h2 className="font-display font-bold text-4xl md:text-5xl text-white">
+              LINHA <span className="text-slate-500">OPERACIONAL</span>
             </h2>
           </div>
-          <button className="text-slate-300 hover:text-white flex items-center gap-2 group transition-colors">
-            Ver catálogo completo
-            <ArrowUpRight className="w-5 h-5 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
+          <button className="px-6 py-3 rounded-full border border-white/10 hover:border-tactical-accent/50 text-slate-300 hover:text-white flex items-center gap-3 group transition-all duration-300 hover:bg-white/5">
+            <span className="text-xs font-bold uppercase tracking-widest">Catálogo Completo</span>
+            <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-tactical-accent group-hover:text-black transition-colors">
+              <ArrowUpRight className="w-4 h-4" />
+            </div>
           </button>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product, index) => (
             <motion.div
               key={product.id}
@@ -63,27 +65,32 @@ const Products: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="group relative h-[400px] overflow-hidden rounded-sm bg-tactical-card border border-white/5 hover:border-tactical-accent/50 transition-colors duration-300"
+              className="group relative h-[450px] rounded-[2rem] overflow-hidden bg-tactical-card/50 border border-white/5 hover:border-tactical-accent/40 shadow-lg hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.7)] transition-all duration-500 hover:-translate-y-2"
             >
               {/* Image */}
-              <div className="absolute inset-0">
+              <div className="absolute inset-0 z-0">
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-50"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90" />
               </div>
 
               {/* Content */}
-              <div className="absolute bottom-0 left-0 w-full p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                <span className="text-tactical-accent text-xs font-bold uppercase tracking-wider mb-2 block opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
-                  {product.category}
-                </span>
-                <h3 className="text-2xl font-display font-bold text-white uppercase mb-4">
-                  {product.title}
-                </h3>
-                <div className="w-12 h-1 bg-tactical-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              <div className="absolute inset-0 p-8 flex flex-col justify-end z-10">
+                <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
+                  <span className="inline-block px-3 py-1 rounded-full bg-tactical-accent/20 border border-tactical-accent/30 text-tactical-accent text-[10px] font-bold uppercase tracking-widest mb-4 backdrop-blur-sm">
+                    {product.category}
+                  </span>
+                  <h3 className="text-2xl font-display font-bold text-white uppercase leading-none mb-4 group-hover:text-tactical-accent transition-colors duration-300">
+                    {product.title}
+                  </h3>
+                  
+                  <div className="h-px w-full bg-white/20 mt-4 overflow-hidden relative">
+                     <div className="absolute inset-0 bg-tactical-accent w-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}

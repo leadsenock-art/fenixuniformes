@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Shield } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar: React.FC = () => {
@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -23,80 +23,97 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-tactical-dark/90 backdrop-blur-md border-b border-white/5 py-4'
-          : 'bg-transparent py-6'
-      }`}
-    >
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        {/* Logo */}
-        <a href="#" className="flex items-center space-x-2 group">
-          <Shield className="w-8 h-8 text-tactical-accent group-hover:text-white transition-colors duration-300" />
-          <div className="flex flex-col">
-            <span className="font-display font-bold text-2xl tracking-wider text-white uppercase leading-none">
-              Fenix
-            </span>
-            <span className="font-sans text-[0.65rem] tracking-[0.2em] text-tactical-accent font-semibold uppercase">
-              Uniforme
-            </span>
-          </div>
-        </a>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium text-slate-300 hover:text-tactical-accent transition-colors tracking-wide uppercase"
-            >
-              {link.name}
+    <>
+      <nav
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-out ${
+          isScrolled ? 'py-4' : 'py-6'
+        }`}
+      >
+        <div className={`container mx-auto px-4 md:px-6 transition-all duration-500 ${
+            isScrolled ? 'max-w-6xl' : ''
+        }`}>
+          <div className={`
+            flex justify-between items-center px-6 py-3 
+            ${isScrolled 
+              ? 'bg-tactical-dark/60 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl shadow-black/50' 
+              : 'bg-transparent'
+            } transition-all duration-500
+          `}>
+            {/* Logo */}
+            <a href="#" className="flex items-center space-x-2 group">
+              <img 
+                src="https://imgur.com/oqaGxkZ" 
+                alt="Fenix Uniforme Logo" 
+                className="h-10 md:h-12 w-auto object-contain drop-shadow-lg"
+              />
             </a>
-          ))}
-          <a
-            href="#contact"
-            className="px-5 py-2 text-xs font-bold text-black bg-tactical-accent hover:bg-white transition-colors duration-300 uppercase tracking-widest rounded-sm"
-          >
-            Falar Agora
-          </a>
+
+            {/* Desktop Menu */}
+            <div className="hidden md:flex items-center space-x-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-sm font-medium text-slate-300 hover:text-white transition-colors tracking-wide uppercase relative group"
+                >
+                  {link.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-tactical-accent transition-all duration-300 group-hover:w-full rounded-full"></span>
+                </a>
+              ))}
+              <a
+                href="https://wa.me/5571996534605"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-2.5 text-xs font-bold text-black bg-gradient-to-r from-tactical-accent to-yellow-400 hover:to-yellow-300 transition-all duration-300 uppercase tracking-widest rounded-full shadow-[0_0_15px_rgba(234,179,8,0.4)] hover:shadow-[0_0_25px_rgba(234,179,8,0.6)] hover:-translate-y-0.5"
+              >
+                Falar Agora
+              </a>
+            </div>
+
+            {/* Mobile Toggle */}
+            <button
+              className="md:hidden text-white p-2 rounded-full hover:bg-white/10 transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X /> : <Menu />}
+            </button>
+          </div>
         </div>
+      </nav>
 
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-white"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X /> : <Menu />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-tactical-card border-b border-white/10 overflow-hidden"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed inset-0 z-40 bg-tactical-dark/95 backdrop-blur-xl pt-32 px-6 md:hidden"
           >
-            <div className="flex flex-col p-6 space-y-4">
+            <div className="flex flex-col items-center space-y-6">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-slate-300 hover:text-tactical-accent transition-colors uppercase tracking-widest text-sm"
+                  className="text-2xl font-display font-bold text-slate-200 hover:text-tactical-accent transition-colors uppercase tracking-widest"
                 >
                   {link.name}
                 </a>
               ))}
+              <a
+                href="https://wa.me/5571996534605"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 px-8 py-4 bg-tactical-accent text-black font-bold rounded-full uppercase tracking-widest shadow-[0_0_20px_rgba(234,179,8,0.4)]"
+              >
+                WhatsApp Oficial
+              </a>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </>
   );
 };
 
